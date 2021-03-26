@@ -2,13 +2,11 @@ package HomeWork;
 
 public class Circle {
     public double radius;
-    public double pi;
-    public double square;
+        public double square;
 
     public Circle() {
         this.radius = radius;
-        this.pi = pi;
-    }
+            }
 
     public static void main(String[] args) {
     }
@@ -25,19 +23,8 @@ public class Circle {
         }
     }
 
-    public double getPi() {
-        return pi;
-    }
-
-    public void setPi(double pi) {
-        if (pi == 3.14)
-            this.pi = pi;
-        else {
-            System.out.println("Pi incorrect");
-        }
-    }
-
     public double square() {
-        return square = getPi() * getRadius() * getRadius();
+        double a = 2;  //power
+        return square = Math.PI * Math.pow(getRadius(), a);
     }
 }
