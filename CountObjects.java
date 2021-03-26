@@ -1,14 +1,14 @@
 package HomeWork;
 
 public class CountObjects {
-    private static int numb;
+    private static int number;
 
     public CountObjects() {
-        numb++;
+        number++;
     }
 
-    public static int getNumb() {
-        return numb;
+    public static int getNumber() {
+        return number;
     }
 }
 

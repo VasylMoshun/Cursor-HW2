@@ -15,7 +15,7 @@ public class Main {
         for (int i = 0; i < 50; i++) {
             new CountObjects();
         }
-        System.out.println("Numbers of objects: " + CountObjects.getNumb() + "\n");
+        System.out.println("Numbers of objects: " + CountObjects.getNumber() + "\n");
         //Task3
         Car car = new Car();
         car.setCarMark("BMW");
@@ -42,6 +42,7 @@ public class Main {
         System.out.println(money1.toString() + " - " + money2.toString() + " = " + money1.subtraction(money2).toString());
         System.out.println(money1.toString() + " * " + money2.toString() + " = " + money1.multiplication(money2).toString());
         System.out.println(money1.toString() + " / " + money2.toString() + " = " + money1.division(money2).toString());
+        System.out.println(money1.toString() + " == " + money2.toString() + " - " + money1.equal(money2));
     }
 }
 

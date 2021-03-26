@@ -24,7 +24,7 @@ public class Money {
         int resultKopeck = (kopeck - money.kopeck);
         if (resultKopeck < 0) {
             resultUah--;
-            resultKopeck = (byte) (100 + resultKopeck);
+                        resultKopeck = (byte) (100 + resultKopeck);
         }
         return new Money(resultUah, (byte) resultKopeck);
     }
@@ -51,6 +51,10 @@ public class Money {
         long resultUah = Math.round(resultUah1);
         return new Money(resultUah, resultKopeck);
     }
+    public boolean equal(Money money){
+        return Uah == money.Uah && kopeck == money.kopeck;
+    }
+
 
     @Override
     public String toString() {
