@@ -2,11 +2,11 @@ package HomeWork;
 
 public class Circle {
     public double radius;
-        public double square;
+    public double square;
 
     public Circle() {
         this.radius = radius;
-            }
+    }
 
     public static void main(String[] args) {
     }
