@@ -33,10 +33,9 @@ public class Money {
 
     public Money multiplication(Money money) {
         long moneyToKop = (Uah * 100) + kopeck;
-        long moneyMoneyToKop = (money.Uah * 100) + money.kopeck;
-        double moneyMultiplication = moneyToKop * moneyMoneyToKop;
-        double resultUah1 = moneyMultiplication / 1000;
-        double resultKopeck1 = (moneyMultiplication % 1000);
+        double moneyMultiplication = moneyToKop * 2.3d;
+        double resultUah1 = moneyMultiplication / 100;
+        double resultKopeck1 = (moneyMultiplication % 100);
         byte resultKopeck = (byte) Math.round(resultKopeck1);
         long resultUah = Math.round(resultUah1);
         return new Money(resultUah, resultKopeck);
@@ -45,10 +44,9 @@ public class Money {
     public Money division(Money money) {
         if (money.Uah == 0 && money.kopeck == 0)
             System.out.println("can not division for 0");
-        long moneyToKop = (Uah * 100) + kopeck;
-        long moneyMoneyToKop = (money.Uah * 100) + money.kopeck;
-        double resultUah1 = moneyToKop / moneyMoneyToKop;
-        double resultKopeck1 = (byte) moneyToKop % moneyMoneyToKop;
+        long moneyMoneyToKop = (Uah * 100) + kopeck;
+        double resultUah1 =  moneyMoneyToKop / 1.2d;
+        double resultKopeck1 = (byte)  moneyMoneyToKop % 1.2;
         byte resultKopeck = (byte) Math.round(resultKopeck1);
         long resultUah = Math.round(resultUah1);
         return new Money(resultUah, resultKopeck);
