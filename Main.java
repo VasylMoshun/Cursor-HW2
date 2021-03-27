@@ -34,12 +34,13 @@ public class Main {
         result = fractions1.comparison(fractions2);
         System.out.println(fractions1.toString() + " > " + fractions2.toString() + " = " + result + "\n");
         //Task5
-        Money money1 = new Money(77L, (byte) 77);
-        Money money2 = new Money(44L, (byte) 44);
-        System.out.println(money1.toString() + " + " + money2.toString() + " = " + money1.addition(money2).toString());
-        System.out.println(money1.toString() + " - " + money2.toString() + " = " + money1.subtraction(money2).toString());
-        System.out.println(money1.toString() + " * " + money2.toString() + " = " + money1.multiplication(money2).toString());
-        System.out.println(money1.toString() + " / " + money2.toString() + " = " + money1.division(money2).toString());
+        Money money1 = new Money(88L, (byte) 8);
+        Money money2 = new Money(3L, (byte) 7);
+        System.out.println(money1.toString() + " + "  + money2.toString() + " = " + money1.addition(money2).toString());
+        System.out.println(money1.toString() + " - "  + money2.toString() + " = " + money1.subtraction(money2).toString());
+        System.out.println(money1.toString() + " + " + money2.toString() + " * " + 4 + " = " + money1.multiplicationOnNumber(4).toString());
+        System.out.println(money1.toString() + " / " + 4 + " = " + money1.divisionOnNumber(4).toString());
+        System.out.println(money1.toString() + " * " + money2.toString() + " = " + money1.multiplicationOnMoney(money2).toString());
         System.out.println(money1.toString() + " == " + money2.toString() + " - " + money1.equals(money2));
     }
 }
