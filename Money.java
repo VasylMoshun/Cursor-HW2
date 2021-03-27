@@ -30,38 +30,38 @@ public class Money {
         return new Money(resultUah, (byte) resultKopeck);
     }
     public Money multiplicationOnNumber(float number) {
-        long resultUah2 = Uah + this.Uah;
-        int resultKopeck2 = (byte) (kopeck + this.kopeck);
-        if (resultKopeck2 >= 100) {
-            resultUah2++;
-    }
-        double moneyToKop = (resultUah2 * 100 + resultKopeck2) / 100d;
+        double moneyToKop = (Uah * 100 + kopeck) / 100d;
         double moneyMultiplication = moneyToKop * number;
         long resultUah = (long) moneyMultiplication;
-        long resultKopeck =  (long) (moneyMultiplication % resultUah) * 100;
-        return new Money(resultUah, (byte) resultKopeck);
+        long resultKopeck = (long) (moneyMultiplication % resultUah) * 100;
+        if (resultKopeck > 100) {
+            resultUah += resultUah / 100;
+            resultKopeck -= resultKopeck * 100;
+        }
+            return new Money(resultUah, (byte) resultKopeck);
+
     }
     public Money divisionOnNumber(float number) {
         if (Uah == 0 && kopeck == 0)
             System.out.println("can not division for 0");
-        long resultUah2 = Uah + this.Uah;
-        int resultKopeck2 = (byte) (kopeck + this.kopeck);
-        if (resultKopeck2 >= 100)
-            resultUah2++;
-            double moneyToKop = (resultUah2 * 100 + resultKopeck2) / 100d;
+            double moneyToKop = (Uah * 100 + kopeck) / 100d;
             double moneyMultiplication = moneyToKop / number;
             long resultUah = (long) moneyMultiplication;
             int resultKopeck = (int) (moneyMultiplication % resultUah) * 100;
             return new Money(resultUah, (byte) resultKopeck);
         }
-    public Money multiplicationOnMoney (Money money){
-            double moneyToKop1 =((Uah * 100) + kopeck ) / 100d;
-            double moneyToKop2 =((this.Uah * 100) + this.kopeck ) / 100d;
-            double moneyMultiplication = moneyToKop1 * moneyToKop2;
-            long resultUah = (long) moneyMultiplication;
-            int resultKopeck =  (int)(moneyMultiplication % resultUah) * 100;
-            return new Money(resultUah, (byte) resultKopeck);
+    public Money multiplicationOnMoney (Money money) {
+        double moneyToKop1 = ((Uah * 100) + kopeck) / 100d;
+        double moneyToKop2 = ((money.Uah * 100) + money.kopeck) / 100d;
+        double moneyMultiplication = moneyToKop1 * moneyToKop2;
+        long resultUah = (long) moneyMultiplication;
+        int resultKopeck = (int) (moneyMultiplication % resultUah) * 100;
+        if (resultKopeck > 100) {
+            resultUah += resultUah / 100;
+            resultKopeck -= resultKopeck * 100;
         }
+            return new Money(resultUah, (byte) resultKopeck);
+            }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

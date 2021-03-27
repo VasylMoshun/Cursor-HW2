@@ -38,7 +38,7 @@ public class Main {
         Money money2 = new Money(3L, (byte) 7);
         System.out.println(money1.toString() + " + "  + money2.toString() + " = " + money1.addition(money2).toString());
         System.out.println(money1.toString() + " - "  + money2.toString() + " = " + money1.subtraction(money2).toString());
-        System.out.println(money1.toString() + " + " + money2.toString() + " * " + 4 + " = " + money1.multiplicationOnNumber(4).toString());
+        System.out.println(money1.toString() + " * " + 4 + " = " + money1.multiplicationOnNumber(4).toString());
         System.out.println(money1.toString() + " / " + 4 + " = " + money1.divisionOnNumber(4).toString());
         System.out.println(money1.toString() + " * " + money2.toString() + " = " + money1.multiplicationOnMoney(money2).toString());
         System.out.println(money1.toString() + " == " + money2.toString() + " - " + money1.equals(money2));
