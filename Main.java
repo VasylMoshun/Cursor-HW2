@@ -5,11 +5,9 @@ public class Main {
     public static void main(String[] args) {
         // Task1
         Circle circle1 = new Circle();
-        circle1.setPi(3.14);
         circle1.setRadius(4.2);
         Circle circle2 = new Circle();
         circle2.setRadius(-3);
-        circle2.setPi(3.15);
         System.out.println("Radius circle1: = " + circle1.getRadius() + "\n Square circle1: =" + circle1.square() + "\n");
         //Task2
         for (int i = 0; i < 50; i++) {
@@ -42,7 +40,7 @@ public class Main {
         System.out.println(money1.toString() + " - " + money2.toString() + " = " + money1.subtraction(money2).toString());
         System.out.println(money1.toString() + " * " + money2.toString() + " = " + money1.multiplication(money2).toString());
         System.out.println(money1.toString() + " / " + money2.toString() + " = " + money1.division(money2).toString());
-        System.out.println(money1.toString() + " == " + money2.toString() + " - " + money1.equal(money2));
+        System.out.println(money1.toString() + " == " + money2.toString() + " - " + money1.equals(money2));
     }
 }
 

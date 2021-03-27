@@ -1,5 +1,7 @@
 package HomeWork;
 
+import java.util.Objects;
+
 public class Money {
     public long Uah;
     public byte kopeck;
@@ -51,8 +53,15 @@ public class Money {
         long resultUah = Math.round(resultUah1);
         return new Money(resultUah, resultKopeck);
     }
-    public boolean equal(Money money){
-        return Uah == money.Uah && kopeck == money.kopeck;
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Money money = (Money) o;
+        return Uah == money.Uah &&
+                kopeck == money.kopeck;
     }
 
 
@@ -60,7 +69,15 @@ public class Money {
     public String toString() {
         return Uah + "," + kopeck;
     }
+
 }
+
+
+
+
+
+
+
 
 
 
