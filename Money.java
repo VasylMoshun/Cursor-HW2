@@ -38,10 +38,11 @@ public class Money {
         double moneyMultiplication = MoneyToKopeck() * number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
-        if (resultKopeck > 100) {
-            resultUah += resultKopeck / 100;
-            resultKopeck -= resultUah * 100;
-        }
+       if (resultKopeck > 100) {
+           resultUah += resultKopeck / 100;
+           resultKopeck -= resultUah * 100;
+       }
+
         return new Money(resultUah, (byte) resultKopeck);
 
     }
@@ -52,17 +53,19 @@ public class Money {
         double moneyMultiplication = MoneyToKopeck() / number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
-        resultUah += resultKopeck / 100;
-        resultKopeck -= resultUah * 100;
+        if (resultKopeck > 100) {
+            resultUah += resultKopeck / 100;
+            resultKopeck -= resultUah * 100;
+        }
         return new Money(resultUah, (byte) resultKopeck);
     }
 
     public Money multiplicationOnMoney(Money money) {
         double moneyToKop1 = MoneyToKopeck();
         double moneyToKop2 = ((money.uah * 100) + money.kopeck) / 100d;
-        double moneyMultiplication = moneyToKop1 * moneyToKop2;
-        long resultUah = (long) moneyMultiplication;
-        long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
+        double moneyMultiplication1 = moneyToKop1 * moneyToKop2;
+        long resultUah = (long) moneyMultiplication1;
+        long resultKopeck = (long) ((moneyMultiplication1 % resultUah) * 100);
         if (resultKopeck > 100) {
             resultUah += resultKopeck / 100;
             resultKopeck -= resultUah * 100;
