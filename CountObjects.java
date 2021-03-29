@@ -1,4 +1,4 @@
-package HomeWork;
+package homework;
 
 public class CountObjects {
     private static int number;

@@ -1,68 +1,48 @@
-package HomeWork;
+package homework;
 
 public class Car {
-    String carMark;
-    boolean carMotorStart;
-    boolean carMotorStop;
-    boolean carDrive;
-    int carGoStaticSpeed;
+
+    String mark;
+    boolean motorStart;
+    boolean drive;
+    int goStaticSpeed;
 
     public Car() {
-        this.carMark = carMark;
-        this.carMotorStart = carMotorStart;
-        this.carMotorStop = carMotorStop;
-        this.carDrive = carDrive;
-        this.carGoStaticSpeed = carGoStaticSpeed;
+        this.mark = mark;
+        this.goStaticSpeed = goStaticSpeed;
     }
 
-    public String getCarMark() {
-        return carMark;
+    public int getGoStaticSpeed() {
+        return goStaticSpeed;
     }
 
-    public void setCarMark(String carMark) {
-        this.carMark = carMark;
+    public void setGoStaticSpeed(int goStaticSpeed) {
+        this.goStaticSpeed = goStaticSpeed;
     }
 
-    public boolean isCarMotorStart() {
-        return carMotorStart;
+    public String getMark() {
+        return mark;
     }
 
-    public void setCarMotorStart(boolean carMotorStart) {
-        if (carMotorStart == true)
-            this.carMotorStart = carMotorStart;
-        else {
-            System.out.println("Car motor is stoped");
-        }
+    public void setMark(String mark) {
+        this.mark = mark;
     }
 
-    public boolean isCarMotorStop() {
-        return carMotorStop;
+    public void Motor() {
+        if (goStaticSpeed > 0)
+            motorStart = true;
+        drive = true;
+        if (goStaticSpeed < 0)
+            motorStart = false;
     }
 
-    public void setCarMotorStop(boolean carMotorStop) {
-        if (carMotorStop == true)
-            this.carMotorStop = carMotorStop;
-        else {
-            System.out.println("Car motor start");
-        }
-    }
+    public void info() {
+        System.out.println("car manufacturer:" + "" + getMark());
+        System.out.println("car speed: " + getGoStaticSpeed());
+        Motor();
+        System.out.println("Car motor start" + " " + motorStart);
+        System.out.println("Car Drive" + " " + drive);
 
-    public boolean isCarDrive() {
-        return carDrive;
-    }
-
-    public void setCarDrive(boolean carDrive) {
-        if (carGoStaticSpeed > 0)
-            this.carDrive = carDrive;
-        System.out.println("Car Drive");
-    }
-
-    public int getCarGoStaticSpeed() {
-        return carGoStaticSpeed;
-    }
-
-    public void setCarGoStaticSpeed(int carGoStaticSpeed) {
-        this.carGoStaticSpeed = carGoStaticSpeed;
     }
 }
 

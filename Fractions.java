@@ -1,4 +1,4 @@
-package HomeWork;
+package homework;
 
 public class Fractions {
     private long numerator;
@@ -37,8 +37,13 @@ public class Fractions {
         return new Fractions(resultNumerator, resultDenominator);
     }
 
-    public boolean equal(Fractions fractions) {
-        return ((double) numerator / denominator == (double) fractions.numerator / fractions.denominator);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fractions fractions = (Fractions) o;
+        return numerator == fractions.numerator &&
+                denominator == fractions.denominator;
     }
 
     public boolean comparison(Fractions fractions) {

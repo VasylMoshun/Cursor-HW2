@@ -1,17 +1,16 @@
-package HomeWork;
+package homework;
 
 public class Money {
-    public long Uah;
+    public long uah;
     public byte kopeck;
-    float number = 4;
 
-    public Money(long Uah, byte kopeck) {
-        this.Uah = Uah;
+    public Money(long uah, byte kopeck) {
+        this.uah = uah;
         this.kopeck = kopeck;
     }
 
     public Money addition(Money money) {
-        long resultUah = Uah + money.Uah;
+        long resultUah = uah + money.uah;
         int resultKopeck = (byte) (kopeck + money.kopeck);
         if (resultKopeck >= 100) {
             resultUah++;
@@ -21,7 +20,7 @@ public class Money {
     }
 
     public Money subtraction(Money money) {
-        long resultUah = Uah - money.Uah;
+        long resultUah = uah - money.uah;
         int resultKopeck = (kopeck - money.kopeck);
         if (resultKopeck < 0) {
             resultUah--;
@@ -30,9 +29,13 @@ public class Money {
         return new Money(resultUah, (byte) resultKopeck);
     }
 
+    public double MoneyToKopeck() {
+        double MoneyToKopeck = (uah * 100 + kopeck / 100d);
+        return MoneyToKopeck;
+    }
+
     public Money multiplicationOnNumber(float number) {
-        double moneyToKop = (Uah * 100 + kopeck) / 100d;
-        double moneyMultiplication = moneyToKop * number;
+        double moneyMultiplication = MoneyToKopeck() * number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
         if (resultKopeck > 100) {
@@ -44,10 +47,9 @@ public class Money {
     }
 
     public Money divisionOnNumber(float number) {
-        if (Uah == 0 && kopeck == 0)
+        if (uah == 0 && kopeck == 0)
             System.out.println("can not division for 0");
-        double moneyToKop = (Uah * 100 + kopeck) / 100d;
-        double moneyMultiplication = moneyToKop / number;
+        double moneyMultiplication = MoneyToKopeck() / number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
         resultUah += resultKopeck / 100;
@@ -56,8 +58,8 @@ public class Money {
     }
 
     public Money multiplicationOnMoney(Money money) {
-        double moneyToKop1 = ((Uah * 100) + kopeck) / 100d;
-        double moneyToKop2 = ((money.Uah * 100) + money.kopeck) / 100d;
+        double moneyToKop1 = MoneyToKopeck();
+        double moneyToKop2 = ((money.uah * 100) + money.kopeck) / 100d;
         double moneyMultiplication = moneyToKop1 * moneyToKop2;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
@@ -73,13 +75,13 @@ public class Money {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Money money = (Money) o;
-        return Uah == money.Uah &&
+        return uah == money.uah &&
                 kopeck == money.kopeck;
     }
 
     @Override
     public String toString() {
-        return Uah + "," + kopeck;
+        return uah + "," + kopeck;
     }
 
 }

@@ -1,4 +1,4 @@
-package HomeWork;
+package homework;
 
 public class Circle {
     public double radius;
@@ -6,9 +6,6 @@ public class Circle {
 
     public Circle() {
         this.radius = radius;
-    }
-
-    public static void main(String[] args) {
     }
 
     public double getRadius() {
@@ -25,6 +22,7 @@ public class Circle {
 
     public double square() {
         double a = 2;  //power
-        return square = Math.PI * Math.pow(getRadius(), a);
+        square = square = Math.PI * Math.pow(getRadius(), a);
+        return square;
     }
 }

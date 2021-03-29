@@ -1,4 +1,4 @@
-package HomeWork;
+package homework;
 
 public class Main {
 
@@ -16,11 +16,10 @@ public class Main {
         System.out.println("Numbers of objects: " + CountObjects.getNumber() + "\n");
         //Task3
         Car car = new Car();
-        car.setCarMark("BMW");
-        car.setCarGoStaticSpeed(60);
-        car.setCarDrive(true);
-        car.setCarMotorStop(false);
-        System.out.println("car manufacturer:" + car.getCarMark() + "\n car speed:  " + car.getCarGoStaticSpeed() + "\n");
+        car.setMark("BMW");
+        car.setGoStaticSpeed(60);
+        car.info();
+        System.out.println();
         //Task4
         Fractions fractions1 = new Fractions(2L, (short) 3);
         Fractions fractions2 = new Fractions(1L, (short) 4);
@@ -29,7 +28,7 @@ public class Main {
         System.out.println(fractions1.toString() + " * " + fractions2.toString() + " = " + fractions1.multiplication(fractions2).toString());
         System.out.println(fractions1.toString() + " " + " / " + " " + fractions2.toString() + " = " + fractions1.division(fractions2).toString());
         boolean result;
-        result = fractions1.equal(fractions2);
+        result = fractions1.equals(fractions2);
         System.out.println(fractions1.toString() + " == " + fractions2.toString() + " = " + result);
         result = fractions1.comparison(fractions2);
         System.out.println(fractions1.toString() + " > " + fractions2.toString() + " = " + result + "\n");
