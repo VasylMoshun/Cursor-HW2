@@ -30,7 +30,7 @@ public class Money {
     }
 
     public double MoneyToKopeck() {
-        double MoneyToKopeck = (uah * 100 + kopeck / 100d);
+        double MoneyToKopeck = ((uah * 100 + kopeck) / 100d);
         return MoneyToKopeck;
     }
 
@@ -38,13 +38,11 @@ public class Money {
         double moneyMultiplication = MoneyToKopeck() * number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
-       if (resultKopeck > 100) {
-           resultUah += resultKopeck / 100;
-           resultKopeck -= resultUah * 100;
-       }
+        if (resultKopeck > 100) {
+            resultUah += resultKopeck / 100;
 
+        }
         return new Money(resultUah, (byte) resultKopeck);
-
     }
 
     public Money divisionOnNumber(float number) {
@@ -53,10 +51,6 @@ public class Money {
         double moneyMultiplication = MoneyToKopeck() / number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
-        if (resultKopeck > 100) {
-            resultUah += resultKopeck / 100;
-            resultKopeck -= resultUah * 100;
-        }
         return new Money(resultUah, (byte) resultKopeck);
     }
 
