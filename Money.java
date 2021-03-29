@@ -29,13 +29,13 @@ public class Money {
         return new Money(resultUah, (byte) resultKopeck);
     }
 
-    public double MoneyToKopeck() {
-        double MoneyToKopeck = ((uah * 100 + kopeck) / 100d);
-        return MoneyToKopeck;
+    public double convertMoneyToKopeck() {
+        double moneyToKopeck = ((uah * 100 + kopeck) / 100d);
+        return moneyToKopeck;
     }
 
     public Money multiplicationOnNumber(float number) {
-        double moneyMultiplication = MoneyToKopeck() * number;
+        double moneyMultiplication = convertMoneyToKopeck() * number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
         if (resultKopeck > 100) {
@@ -48,14 +48,14 @@ public class Money {
     public Money divisionOnNumber(float number) {
         if (uah == 0 && kopeck == 0)
             System.out.println("can not division for 0");
-        double moneyMultiplication = MoneyToKopeck() / number;
+        double moneyMultiplication = convertMoneyToKopeck() / number;
         long resultUah = (long) moneyMultiplication;
         long resultKopeck = (long) ((moneyMultiplication % resultUah) * 100);
         return new Money(resultUah, (byte) resultKopeck);
     }
 
     public Money multiplicationOnMoney(Money money) {
-        double moneyToKop1 = MoneyToKopeck();
+        double moneyToKop1 = convertMoneyToKopeck();
         double moneyToKop2 = ((money.uah * 100) + money.kopeck) / 100d;
         double moneyMultiplication1 = moneyToKop1 * moneyToKop2;
         long resultUah = (long) moneyMultiplication1;
