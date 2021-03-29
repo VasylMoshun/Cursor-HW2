@@ -8,8 +8,7 @@ public class Car {
     int goStaticSpeed;
 
     public Car() {
-        this.mark = mark;
-        this.goStaticSpeed = goStaticSpeed;
+
     }
 
     public int getGoStaticSpeed() {
@@ -28,7 +27,7 @@ public class Car {
         this.mark = mark;
     }
 
-    public void Motor() {
+    public void checkMotorStatus() {
         if (goStaticSpeed > 0)
             motorStart = true;
         drive = true;
@@ -39,7 +38,7 @@ public class Car {
     public void info() {
         System.out.println("car manufacturer:" + "" + getMark());
         System.out.println("car speed: " + getGoStaticSpeed());
-        Motor();
+        checkMotorStatus();
         System.out.println("Car motor start" + " " + motorStart);
         System.out.println("Car Drive" + " " + drive);
 
